@@ -1,0 +1,52 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+    <div class="card">
+
+        <strong>
+
+            <br>
+
+            &nbsp;
+
+            {{record.name}}
+
+        </strong>
+
+        <hr>
+
+        <div class="card-body">
+
+            <p> <strong> ID: </strong> {{record.id}} </p>
+
+            <p> <strong> Email: </strong> {{record.email}} </p>
+
+            <p> <strong> Phone: </strong> {{record.phone}} </p>
+
+            <p> <strong> Due Date: </strong> {{record.due_date}} </p>
+
+            <p> <strong> Address: </strong> {{record.address}} </p>
+
+            <p> <strong> Due Amount: </strong> {{record.due_amount}} </p>
+
+            <p> <strong> Creation Date: </strong> {{record.creation_date}} </p>
+
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary"> Return </a>
+
+    &nbsp;
+
+    <a href="{% url 'update-record' record.id %}" class="btn btn-info"> Update Record </a>
+
+    &nbsp;
+
+    <a href="{% url 'delete-record' record.id %}" class="btn btn-danger"> Delete </a>
+
+{% endblock %}
